@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="ArithmeticOutput">
+        <xs:complexType>
+            <xs:sequence>
+
+                <!-- Two-input arithmetic functions -->
+                <xs:element name="AdditionResult" type="xs:decimal"/>
+                <xs:element name="SubtractionResult" type="xs:decimal"/>
+                <xs:element name="MultiplicationResult" type="xs:decimal"/>
+                <xs:element name="DivisionResult" type="xs:decimal"/>
+                <xs:element name="MaximumResult" type="xs:decimal"/>
+                <xs:element name="MinimumResult" type="xs:decimal"/>
+
+                <!-- Numeric comparisons -->
+                <xs:element name="EqualResult" type="xs:boolean"/>
+                <xs:element name="LessThanResult" type="xs:boolean"/>
+                <xs:element name="GreaterThanResult" type="xs:boolean"/>
+
+                <!-- Single-input arithmetic functions -->
+                <xs:element name="AbsoluteResult" type="xs:decimal"/>
+                <xs:element name="SquareRootResult" type="xs:decimal"/>
+                <xs:element name="SquareResult" type="xs:decimal"/>
+                <xs:element name="SignResult" type="xs:decimal"/>
+                <xs:element name="NegativeResult" type="xs:decimal"/>
+                <xs:element name="InverseResult" type="xs:decimal"/>
+
+                <!-- Power -->
+                <xs:element name="PowerResult" type="xs:decimal"/>
+
+                <!-- Decimal handling -->
+                <xs:element name="CeilingResult" type="xs:decimal"/>
+                <xs:element name="FloorResult" type="xs:decimal"/>
+                <xs:element name="RoundResult" type="xs:decimal"/>
+                <xs:element name="FormattedNumber" type="xs:string"/>
+
+                <!-- Real-world arithmetic example -->
+                <xs:element name="OrderCalculation">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="NetAmount" type="xs:decimal"/>
+
+                            <xs:element name="Items">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Item" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="SequenceNumber" type="xs:integer"/>
+                                                    <xs:element name="ItemNumber" type="xs:string"/>
+                                                    <xs:element name="LineAmount" type="xs:decimal"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

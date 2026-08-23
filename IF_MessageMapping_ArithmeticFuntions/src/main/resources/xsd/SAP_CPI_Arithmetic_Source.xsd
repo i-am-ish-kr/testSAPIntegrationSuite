@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="ArithmeticInput">
+        <xs:complexType>
+            <xs:sequence>
+
+                <!-- Generic values for Add, Subtract, Multiply, Divide, Min, Max, comparisons -->
+                <xs:element name="ValueA" type="xs:decimal"/>
+                <xs:element name="ValueB" type="xs:decimal"/>
+
+                <!-- Unary arithmetic functions -->
+                <xs:element name="NegativeValue" type="xs:decimal"/>
+                <xs:element name="DecimalValue" type="xs:decimal"/>
+                <xs:element name="SquareRootValue" type="xs:decimal"/>
+
+                <!-- Power -->
+                <xs:element name="Base" type="xs:decimal"/>
+                <xs:element name="Exponent" type="xs:decimal"/>
+
+                <!-- Real-world pricing example -->
+                <xs:element name="Order">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="GrossAmount" type="xs:decimal"/>
+                            <xs:element name="DiscountAmount" type="xs:decimal"/>
+
+                            <xs:element name="Items">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Item" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ItemNumber" type="xs:string"/>
+                                                    <xs:element name="Quantity" type="xs:decimal"/>
+                                                    <xs:element name="UnitPrice" type="xs:decimal"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
