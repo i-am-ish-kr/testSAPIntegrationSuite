@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="CustomerValidationResults">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="CustomerValidation"
+                            minOccurs="0"
+                            maxOccurs="unbounded">
+
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <!-- Helps identify which Customer produced the result -->
+                            <xs:element name="CustomerId"
+                                        type="xs:string"/>
+
+                            <xs:element name="CustomerName"
+                                        type="xs:string"/>
+
+                            <xs:element name="AndResult"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="OrResult"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="NotResult"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="EqualsBooleanResult"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="NotEqualsResult"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="IfResult"
+                                        type="xs:string"/>
+
+                            <xs:element name="IfSResult"
+                                        type="xs:string"/>
+
+                            <!-- May be suppressed -->
+                            <xs:element name="IfWithoutElseResult"
+                                        type="xs:string"
+                                        minOccurs="0"/>
+
+                            <!-- May be suppressed -->
+                            <xs:element name="IfSWithoutElseResult"
+                                        type="xs:string"
+                                        minOccurs="0"/>
+
+                            <xs:element name="IsNilResult"
+                                        type="xs:boolean"/>
+
+                        </xs:sequence>
+                    </xs:complexType>
+
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="Customers">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="Customer"
+                            minOccurs="1"
+                            maxOccurs="unbounded">
+
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <xs:element name="CustomerId"
+                                        type="xs:string"/>
+
+                            <xs:element name="CustomerName"
+                                        type="xs:string"/>
+
+                            <!-- Fields for Boolean functions -->
+                            <xs:element name="IsActive"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="IsPremium"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="IsVerified"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="HasOverduePayment"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="ManagerApproved"
+                                        type="xs:boolean"/>
+
+                            <xs:element name="HRApproved"
+                                        type="xs:boolean"/>
+
+                            <!-- Fields for IF examples -->
+                            <xs:element name="EmploymentType"
+                                        type="xs:string"/>
+
+                            <xs:element name="Department"
+                                        type="xs:string"/>
+
+                            <!-- Used for isNil -->
+                            <xs:element name="OptionalRemark"
+                                        type="xs:string"
+                                        minOccurs="0"
+                                        nillable="true"/>
+
+                        </xs:sequence>
+                    </xs:complexType>
+
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
